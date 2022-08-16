@@ -7,7 +7,7 @@ img = cv2.imread("./rubik-cube.jpg", cv2.IMREAD_COLOR)
 window_name = 'Image'
 start_point = (50,50)
 end_point = (90,90)
-color = (255,0,0)
+color = (255,255,0)
 thickness = 2
 
 img = cv2.rectangle(img, start_point, end_point, color, thickness)
