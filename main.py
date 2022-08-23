@@ -1,5 +1,4 @@
 from string import whitespace
-import string
 from tracemalloc import start
 import cv2
 import numpy as np
@@ -18,9 +17,6 @@ color_list = [
     ['orange', [10, 100, 20], [20, 250, 250]],
 ]
 
-
-
-
 #Guarda en variables la imagen original, el color del centro
 #y crea un array con los colores de la cara.
 img = cv2.imread("./rubik-cube.jpeg", cv2.IMREAD_COLOR)
@@ -28,9 +24,6 @@ center = ''
 face_colors = []
 img_height= img.shape[0]
 img_width = img.shape[1]
-
-
-
 
 #Detecta color de las caras y guarda las variables
 
@@ -90,15 +83,10 @@ for square in range(1,10):
         center = face_colors[square-1]
 
 
-    
-        
-
 #despliega los resultados
 cv2.imshow("image", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
-
 
 print(face_colors)
 print(center)
