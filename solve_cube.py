@@ -37,12 +37,12 @@ import kociemba as cube
 
 def solve_cube():
 
-    upF = "BYRRWWRYO"
-    downF = "ROBOYOYRW"
-    frontF = "GBWRRWGGO"
-    backF = "WGRGOOOBO"
-    rightF = "BRBBBWYYG"
-    leftF = "YYWWGGGBY"
+    upF = "GBRYWWRYY"
+    downF = "RGOYYOOBR"
+    frontF = "YROWRBWRB"
+    backF = "WOWBORYYG"
+    rightF = "BGBRBWWGB"
+    leftF = "OGGWGOYOG"
 
     allF = upF + rightF + frontF + downF + leftF + backF
 
