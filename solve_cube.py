@@ -37,15 +37,15 @@ import kociemba as cube
 
 def solve_cube():
 
-    upF = "GBGRWWGWG"
-    downF = "BBBYYGBBB"
-    frontF = "YGYYRYRRR"
-    backF = "WYWWOWOOO"
-    rightF = "RBRRBRWOW"
-    leftF = "OGOOGOYGY"
+    upF = "BYRRWWRYO"
+    downF = "ROBOYOYRW"
+    frontF = "GBWRRWGGO"
+    backF = "WGRGOOOBO"
+    rightF = "BRBBBWYYG"
+    leftF = "YYWWGGGBY"
 
     allF = upF + rightF + frontF + downF + leftF + backF
-    print(allF)
+
 
     allF1 = allF.replace("W", "U")
     allF2 = allF1.replace("Y", "D")
@@ -53,7 +53,7 @@ def solve_cube():
     allF4 = allF3.replace("B", "R")
     allF5 = allF4.replace("O", "B")
     allF6 = allF5.replace("G", "L")
-    print(allF6)
+
 
     solution = cube.solve(allF6)
 
