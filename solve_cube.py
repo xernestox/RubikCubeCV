@@ -35,26 +35,38 @@ import kociemba as cube
 #              |*D7**D8**D9*|
 #              |************|
 
-def solve_cube():
+def solve_cube(colors_array, centers_array):
 
-    upF = "GBRYWWRYY"
-    downF = "RGOYYOOBR"
-    frontF = "YROWRBWRB"
-    backF = "WOWBORYYG"
-    rightF = "BGBRBWWGB"
-    leftF = "OGGWGOYOG"
+    upF = colors_array[0]
+    downF = colors_array[1]
+    frontF = colors_array[2]
+    backF = colors_array[3]
+    rightF = colors_array[4]
+    leftF = colors_array[5]
+
+    # upF = "GBRYWWRYY"
+    # downF = "RGOYYOOBR"
+    # frontF = "YROWRBWRB"
+    # backF = "WOWBORYYG"
+    # rightF = "BGBRBWWGB"
+    # leftF = "OGGWGOYOG" 
 
     allF = upF + rightF + frontF + downF + leftF + backF
 
-
-    allF1 = allF.replace("W", "U")
-    allF2 = allF1.replace("Y", "D")
-    allF3 = allF2.replace("R", "F")
-    allF4 = allF3.replace("B", "R")
-    allF5 = allF4.replace("O", "B")
-    allF6 = allF5.replace("G", "L")
-
-
+    allF1 = allF.replace(centers_array[0], "U")
+    allF2 = allF1.replace(centers_array[1], "R")
+    allF3 = allF2.replace(centers_array[2], "B")
+    allF4 = allF3.replace(centers_array[3], "L")
+    allF5 = allF4.replace(centers_array[4], "F")
+    allF6 = allF5.replace(centers_array[5], "D")
+ 
+    # allF1 = allF.replace("W", "U")
+    # allF2 = allF1.replace("Y", "D")
+    # allF3 = allF2.replace("R", "F")
+    # allF4 = allF3.replace("B", "R")
+    # allF5 = allF4.replace("O", "B")
+    # allF6 = allF5.replace("G", "L")
+    
     solution = cube.solve(allF6)
 
     return(solution)
