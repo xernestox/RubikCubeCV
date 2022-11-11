@@ -68,3 +68,7 @@ def send_commands(arduino_commands):
 
     return("end of arduino commands")
 
+# s.write(buttonUP)
+# s.close()
+# s.open()
+# s.write(buttonUP)
