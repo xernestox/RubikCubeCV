@@ -1,17 +1,16 @@
-import serial
-import time
+from send2arduino import send_commands
 
-arduino = serial.Serial(port='COM3', baudrate=19200, timeout= 1.0)
+conf = send_commands("12")
+print(conf + "1")
 
-def write_read(x):
-    arduino.write(x.encode())
-    # time.sleep(0.05)
-    data = arduino.readline()
-    return data
+conf = send_commands("21")
+print(conf + "2")
 
-commands = list("11111111111111111111")
+conf = send_commands("12")
+print(conf + "3")
 
-for x in commands:
-    value = write_read(x)
-    print(value)
+conf = send_commands("21")
+print(conf + "4")
 
+conf = send_commands("12")
+print(conf + "5")
