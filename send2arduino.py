@@ -4,6 +4,11 @@ import time
 startMarker = 60
 endMarker = 62
 
+serPort = 'COM3'
+baudRate = 9600
+ser = serial.Serial(serPort, baudRate)
+print("Serial port " + serPort + " opened  Baudrate " + str(baudRate))
+
 def write_read(x):
     ser.write(x.encode())
     time.sleep(0.05)
@@ -48,15 +53,16 @@ def recvFromArduino():
   
   return(ck)
 
-def send_commands(arduino_commands):
+def send_commands(arduino_commands):    
 
-    serPort = 'COM3'
-    baudRate = 9600
-    ser = serial.Serial(serPort, baudRate)
-    print("Serial port " + serPort + " opened  Baudrate " + str(baudRate))
- 
+    try: 
+      ser.open()
+      waitForArduino()
+    except: 
+      waitForArduino()
+
     commands = list(arduino_commands)
-    waitForArduino()
+    
 
     for x in commands:
         value = write_read(x)
@@ -67,8 +73,3 @@ def send_commands(arduino_commands):
 
 
     return("end of arduino commands")
-
-# s.write(buttonUP)
-# s.close()
-# s.open()
-# s.write(buttonUP)
