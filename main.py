@@ -56,7 +56,7 @@ time.sleep(4)
 # time.sleep(4)
 #URBLFD
 
-colors_array = ["BYYOWRBGW","RGBOBOYYY","RROYOOBWY","WGWWGWGRO","RYGGRBWBG","GROWYBRBO"]
+colors_array = ["ORWBWGOOB","RYGOBWWBW","RGBOOYORR","YYYOGWBWY","GGWGRBGRO","RWGBYRYYB"]
 centers_array = ["W","B","O","G","R","Y"]
 
 #solve cube with kociemba algorithm
