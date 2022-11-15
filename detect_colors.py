@@ -14,12 +14,13 @@ def detect_colors():
 
     #Limites de colores en HSV
     color_list = [
-        ['R', [160, 160, 70], [180, 250, 250]],
-        ['Y', [20, 40, 70], [40, 250, 250]],
+        ['R', [150, 160, 70], [180, 250, 250]],
+        ['R', [0, 40, 70], [5, 250, 250]],
+        ['Y', [16, 40, 70], [50, 250, 250]],
         ['G', [55, 100, 70], [75, 250, 250]],
-        ['B', [100, 50, 70], [130, 250, 250]],
+        ['B', [100, 50, 70], [150, 250, 250]],
         ['W', [0, 0, 70], [360, 40, 250]],
-        ['O', [10, 100, 20], [20, 250, 250]],
+        ['O', [6, 40, 70], [15, 250, 255]],
     ]
 
     #Captura la imagen de la camara web
@@ -38,9 +39,9 @@ def detect_colors():
     #y crea un array con los colores de la cara.
     img_filename = webcam_capture()
     img = cv2.imread(img_filename, cv2.IMREAD_COLOR)
-    cv2.imshow("image", img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    # cv2.imshow("image", img)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
 
     center = ''
     face_colors = ""
@@ -66,15 +67,14 @@ def detect_colors():
         return color_found
 
     #parametros iniciales
-    start_pointX = 130
-    end_pointX = 270
+    gap = 30
+    start_pointX = 130 + gap
+    end_pointX = 270 - gap
     square_width = end_pointX - start_pointX
+     
 
-    start_pointY = 40
-    end_pointY = start_pointY + square_width
-
-
-
+    start_pointY = 40 + gap
+    end_pointY = start_pointY + square_width 
 
     color = (255,255,0)
     thickness = 2
@@ -85,9 +85,9 @@ def detect_colors():
         img = cv2.rectangle(img, (start_pointX, start_pointY), (end_pointX, end_pointY), color, thickness)
         box = img[start_pointY:end_pointY, start_pointX:end_pointX]
 
-        cv2.imshow("image", box)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        # cv2.imshow("image", box)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
         
         #deteccion de color
         hsv = cv2.cvtColor(box, cv2.COLOR_BGR2HSV)
@@ -96,13 +96,13 @@ def detect_colors():
         #cambio de parametros para siguiente cuadro
         
         if square%3 == 0:
-            start_pointY += square_width
-            end_pointY += square_width
-            start_pointX = 130
-            end_pointX = 270      
+            start_pointY += square_width + 2*gap
+            end_pointY += square_width + 2*gap
+            start_pointX = 130 + gap
+            end_pointX = 270 - gap
         else:
-            start_pointX += square_width
-            end_pointX += square_width
+            start_pointX += square_width + 2*gap
+            end_pointX += square_width + 2*gap
         
         #guarda el color del centro de la cara
 
@@ -111,8 +111,8 @@ def detect_colors():
 
 
     #despliega los resultados
-    cv2.imshow("image", img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    # cv2.imshow("image", img)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
 
     return(face_colors, center)

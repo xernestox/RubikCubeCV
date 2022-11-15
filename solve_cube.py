@@ -38,12 +38,12 @@ import kociemba as cube
 def solve_cube(colors_array, centers_array):
 
     upF = colors_array[0]
-    downF = colors_array[1]
-    frontF = colors_array[2]
-    backF = colors_array[3]
-    rightF = colors_array[4]
-    leftF = colors_array[5]
-
+    rightF = colors_array[1]
+    backF = colors_array[2]
+    leftF = colors_array[3]
+    frontF = colors_array[4]
+    downF = colors_array[5]
+    
     # upF = "GBRYWWRYY"
     # downF = "RGOYYOOBR"
     # frontF = "YROWRBWRB"

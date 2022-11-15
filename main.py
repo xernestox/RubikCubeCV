@@ -4,53 +4,60 @@ from motor_commands import arduino_commands
 from send2arduino import send_commands
 import time
 
-colors_array, centers_array = []
+# colors_array = [None] * 6
+# centers_array = [None] * 6
  
 #detect up
-
-colors_array[0], centers_array[0] = detect_colors()
-print(colors_array[0], centers_array[0])
-
-#detect right
-
-send_commands("25")
+send_commands("1")
 time.sleep(4)
-colors_array[1], centers_array[1] = detect_colors()
-print(colors_array[1], centers_array[1])
 
-#detect back
+# colors_array[0], centers_array[0] = detect_colors()
+# print(colors_array[0], centers_array[0])
 
-send_commands("2")
-time.sleep(4)
-colors_array[2], centers_array[2] = detect_colors()
-print(colors_array[2], centers_array[2])
+# #detect right
 
-#detect left
+# send_commands("25")
+# time.sleep(4)
+# colors_array[1], centers_array[1] = detect_colors()
+# print(colors_array[1], centers_array[1])
 
-send_commands("2")
-time.sleep(4)
-colors_array[3], centers_array[3] = detect_colors()
-print(colors_array[3], centers_array[3])
+# #detect back
 
-#detect front
+# send_commands("2")
+# time.sleep(4)
+# colors_array[2], centers_array[2] = detect_colors()
+# print(colors_array[2], centers_array[2])
 
-send_commands("2")
-time.sleep(4)
-colors_array[4], centers_array[4] = detect_colors()
-print(colors_array[4], centers_array[4])
+# #detect left
+
+# send_commands("2")
+# time.sleep(4)
+# colors_array[3], centers_array[3] = detect_colors()
+# print(colors_array[3], centers_array[3])
+
+# #detect front
+
+# send_commands("2")
+# time.sleep(4)
+# colors_array[4], centers_array[4] = detect_colors()
+# print(colors_array[4], centers_array[4])
 
 
-#detect down
+# #detect down
 
-send_commands("425")
-time.sleep(4)
-colors_array[5], centers_array[5] = detect_colors()
-print(colors_array[5], centers_array[5])
+# send_commands("425")
+# time.sleep(4)
+# colors_array[5], centers_array[5] = detect_colors()
+# print(colors_array[5], centers_array[5])
 
 
-#reset to initial position
-send_commands("5224")
-time.sleep(4)
+# #reset to initial position
+# send_commands("5224")
+# time.sleep(4)
+#URBLFD
+
+colors_array = ["BYYOWRBGW","RGBOBOYYY","RROYOOBWY","WGWWGWGRO","RYGGRBWBG","GROWYBRBO"]
+centers_array = ["W","B","O","G","R","Y"]
 
 #solve cube with kociemba algorithm
 kociemba_array = solve_cube(colors_array, centers_array)
