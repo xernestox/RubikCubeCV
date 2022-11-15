@@ -9,30 +9,35 @@ colors_array, centers_array = []
 #detect up
 
 colors_array[0], centers_array[0] = detect_colors()
+print(colors_array[0], centers_array[0])
 
 #detect right
 
 send_commands("25")
 time.sleep(4)
 colors_array[1], centers_array[1] = detect_colors()
+print(colors_array[1], centers_array[1])
 
 #detect back
 
 send_commands("2")
 time.sleep(4)
 colors_array[2], centers_array[2] = detect_colors()
+print(colors_array[2], centers_array[2])
 
 #detect left
 
 send_commands("2")
 time.sleep(4)
 colors_array[3], centers_array[3] = detect_colors()
+print(colors_array[3], centers_array[3])
 
 #detect front
 
 send_commands("2")
 time.sleep(4)
 colors_array[4], centers_array[4] = detect_colors()
+print(colors_array[4], centers_array[4])
 
 
 #detect down
@@ -40,6 +45,7 @@ colors_array[4], centers_array[4] = detect_colors()
 send_commands("425")
 time.sleep(4)
 colors_array[5], centers_array[5] = detect_colors()
+print(colors_array[5], centers_array[5])
 
 
 #reset to initial position
