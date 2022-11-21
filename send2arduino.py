@@ -55,21 +55,23 @@ def recvFromArduino():
 
 def send_commands(arduino_commands):    
 
-    try: 
-      ser.open()
-      waitForArduino()
-    except: 
-      waitForArduino()
+  try: 
+    ser.open()
+    waitForArduino()
 
     commands = list(arduino_commands)
-    
-
+  
     for x in commands:
         value = write_read(x)
         print(value.decode("utf-8"))
 
-    ser.close()
-    time.sleep(1)
+        # ser.close()
+  except: 
+    commands = list(arduino_commands)
+  
+    for x in commands:
+        value = write_read(x)
+        print(value.decode("utf-8"))
 
-
-    return("end of arduino commands")
+  time.sleep(1)
+  return("end of arduino commands")
